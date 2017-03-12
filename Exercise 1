@@ -1,0 +1,51 @@
+chathurika@ubuntu-C50:~$ irb
+irb(main):001:0> "Hello Ruby"
+=> "Hello Ruby"
+
+irb(main):002:0> puts "Hello Ruby"
+Hello Ruby
+=> nil
+
+irb(main):003:0> 3+2
+=> 5
+
+irb(main):004:0> 3*2
+=> 6
+
+irb(main):005:0> 3**2
+=> 9
+
+irb(main):006:0> Math.sqrt(9)
+=> 3.0
+
+irb(main):007:0> a=3**2
+=> 9
+
+irb(main):008:0> b=4
+=> 4
+
+irb(main):009:0> c=a+b
+=> 13
+
+irb(main):010:0> def hi
+irb(main):011:1> puts "Hello Ruby!"
+irb(main):012:1> end
+=> nil
+
+irb(main):013:0> hi
+Hello Ruby!
+=> nil
+
+irb(main):014:0> hi()
+Hello Ruby!
+=> nil
+
+irb(main):015:0> def hi(name)
+irb(main):016:1> puts "Hello #{name}!"
+irb(main):017:1> end
+=> nil
+
+irb(main):018:0> hi("Matz")
+Hello Matz!
+=> nil
+
