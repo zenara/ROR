@@ -1,0 +1,93 @@
+key: value
+another_key: Another value goes here.
+a_number_value: 100
+scientific_notation: 1e+12
+boolean: true
+null_value: null
+key with spaces: value
+a_nested_map:
+    key: value
+    another_key: Another Value
+    another_nested_map:
+        hello: hello
+0.25: a float key
+? |
+    This is a key
+    that has multiple lines
+: and this is its value
+? - Sri Lanka
+  - Real Madrid
+: [ 2001-01-01, 2002-02-02 ]
+a_sequence:
+    - Item 1
+    - Item 2
+    - 0.5 # sequences can contain disparate types.
+    - Item 4
+    - key: value
+      another_key: another_value
+    -
+        - This is a sequence
+        - inside another sequence
+#supports json
+json_map: {"key": "value"}
+json_seq: [3, 2, 1, "takeoff"]
+
+# YAML also has a handy feature called 'anchors', which let you easily duplicate
+# content across your document. Both of these keys will have the same value:
+anchored_content: &anchor_name This string will appear as the value of two keys.
+other_anchor: *anchor_name
+
+# Anchors can be used to duplicate/inherit properties
+base: &base
+    name: Everyone has same name
+
+foo: &foo
+    <<: *base
+    age: 10
+
+bar: &bar
+    <<: *base
+    age: 20
+
+# foo and bar would also have name: Everyone has same name
+
+# YAML also has tags, which you can use to explicitly declare types.
+explicit_string: !!str 0.5
+# Some parsers implement language specific tags, like this one for Python's
+# complex number type.
+python_complex_number: !!python/complex 1+2j
+
+# We can also use yaml complex keys with language specific tags
+? !!python/tuple [5, 7]
+: Fifty Seven
+# Would be {(5, 7): 'Fifty Seven'} in python
+
+####################
+# EXTRA YAML TYPES #
+####################
+
+# Strings and numbers aren't the only scalars that YAML can understand.
+# ISO-formatted date and datetime literals are also parsed.
+datetime: 2001-12-15T02:59:43.1Z
+datetime_with_spaces: 2001-12-14 21:59:43.10 -5
+date: 2002-12-14
+
+# The !!binary tag indicates that a string is actually a base64-encoded
+# representation of a binary blob.
+gif_file: !!binary |
+    R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5
+    OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+
+    +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC
+    AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=
+
+# YAML also has a set type, which looks like this:
+set:
+    ? item1
+    ? item2
+    ? item3
+
+# Like Python, sets are just maps with null values; the above is equivalent to:
+set2:
+    item1: null
+    item2: null
+    item3: null
