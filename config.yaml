@@ -57,7 +57,7 @@ explicit_string: !!str 0.5
 # complex number type.
 python_complex_number: !!python/complex 1+2j
 
-# We can also use yaml complex keys with language specific tags
+# Also yaml complex keys can use with language specific tags
 ? !!python/tuple [5, 7]
 : Fifty Seven
 # Would be {(5, 7): 'Fifty Seven'} in python
