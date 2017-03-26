@@ -1,4 +1,3 @@
 # ROR
 Exercises, following Ruby on Rails
-
-Scropting:  scripts
+Scripting:  scripts
